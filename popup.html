@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+
+<head>
+<script src="jquery.min.js"></script>
+
+<!--adding internal CSS for form element styling -->
+<style>
+
+#task,#add,#clear {
+    border-radius: 25px;
+    border: 2px solid #bed4f7;
+}
+
+</style>
+</head>
+
+<!--Defining the form elements -->
+
+<form id="form" action="#" method="POST">
+
+<input id="task" name="task" type="text" placeholder="Input the tasks for the day"/><br></br>
+<input id="add" type="submit" value="Add" />
+<button id="clear">Clear All</button>
+
+</form>
+
+<div id="alert"></div>
+<div id="todos"></div>
+
+<!--Calling the external java script -->
+<script src="popup.js"></script>
+
+</html>

@@ -5,7 +5,7 @@ This repository contains the files which are required to make a 'To-Do List' Chr
 Development Stage - Elementary
 
 Contributers - 
-   - [Raghuram Prabhu](https://github.com/Raghuramprabhu)
+   - [Raghuram Prabhu](https://github.com/RaghuramprabhuMuthukrishnan)
    - [Snigdha Prakash](https://github.com/Snigdha171)
 
 Sources -

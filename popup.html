@@ -1,14 +1,32 @@
-<!doctype html>
+<!---------------------------------------------------
 
+Name : popup.html
+Version : 1.1
+Contributors : Snigdha Prakash
+			   Sai Raghuram Prabhu
+			   Prachi Prakash
+Feature Changes : 
+Date 			Description
+06/11/2016		Save the data on reload of the plugin
+08/11/2016		Added appropriate title on task completion
+
+------------------------------------------------------>
+
+<!DOCTYPE html>
 <html>
-
 <head>
 <script src="jquery.min.js"></script>
-
-<!--adding internal CSS for form element styling -->
 <style>
+li {
+	list-style:none;
+}
 
-#task,#add,#clear {
+ul li.checked {
+  text-decoration: line-through;
+  
+}
+
+#taskInput,#addTask,#clearTasks {
     border-radius: 25px;
     border: 2px solid #bed4f7;
 }
@@ -16,20 +34,18 @@
 </style>
 </head>
 
-<!--Defining the form elements -->
+<div id="taskDiv" class="header">
+  <input type="text" id="taskInput" placeholder="Enter the task">
+  <br></br>
+  <button id="addTask" class="addTask">Add</button>
+  <button id='clearTasks'>Clear</button>
+  
 
-<form id="form" action="#" method="POST">
-
-<input id="task" name="task" type="text" placeholder="Input the tasks for the day"/><br></br>
-<input id="add" type="submit" value="Add" />
-<button id="clear">Clear All</button>
-
-</form>
-
+</div>
 <div id="alert"></div>
-<div id="todos"></div>
+<ul id="taskUL" title="Click to mark the task completed"></ul>
 
-<!--Calling the external java script -->
+
 <script src="popup.js"></script>
 
 </html>

@@ -7,6 +7,7 @@ Development Stage - Elementary
 Contributers - 
    - [Raghuram Prabhu](https://github.com/RaghuramprabhuMuthukrishnan)
    - [Snigdha Prakash](https://github.com/Snigdha171)
+   - [Prachi Prakash](https://github.com/prachiprakash26)
 
 Sources -
 

@@ -1,15 +1,10 @@
 <!---------------------------------------------------
-
 Name : popup.html
 Version : 1.1
-Contributors : Snigdha Prakash
-			   Sai Raghuram Prabhu
-			   Prachi Prakash
 Feature Changes : 
 Date 			Description
 06/11/2016		Save the data on reload of the plugin
 08/11/2016		Added appropriate title on task completion
-
 ------------------------------------------------------>
 
 <!DOCTYPE html>
@@ -17,8 +12,10 @@ Date 			Description
 <head>
 <script src="jquery.min.js"></script>
 <style>
-li {
+ul li {
 	list-style:none;
+	cursor: pointer;
+    position: relative;
 }
 
 ul li.checked {
@@ -31,6 +28,17 @@ ul li.checked {
     border: 2px solid #bed4f7;
 }
 
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 1px;
+    left: -14px;
+    transform: rotate(45deg);
+    height: 14px;
+    width: 5px;
+}
 </style>
 </head>
 

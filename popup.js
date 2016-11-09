@@ -1,21 +1,23 @@
 /*
-
 Name : popup.js
 Version : 1.1
-Contributors : Snigdha Prakash
-			   Sai Raghuram Prabhu
-			   Prachi Prakash
 Feature Changes : 
 Date 			Description
 06/11/2016		Save the data on reload of the plugin
 08/11/2016		Added appropriate title on task completion
-
-
 */
+
 
 
 $(document).ready(function() {
   
+	//Hit enter key to add taks
+	document.onkeydown=function(){
+		if(window.event.keyCode=='13'){
+			addTask();
+			update();
+		}
+	}
   // To save and reload
   function update() { 
     var toDoList = [];
@@ -60,10 +62,15 @@ list.addEventListener('click', function(ev) {
 
 //Preserve the status
 $('.checked').attr('title', 'Click to undo');
-	
+
 // Create a new task list
 $("#addTask").click(function(){
-  var li = document.createElement("li");
+  addTask();
+  update();
+});
+
+function addTask() {
+	 var li = document.createElement("li");
   var inputValue = document.getElementById("taskInput").value;
   var t = document.createTextNode(inputValue);
   console.log(t);
@@ -75,7 +82,7 @@ $("#addTask").click(function(){
     document.getElementById("taskUL").appendChild(li);
   }
   document.getElementById("taskInput").value = "";
-  update();
-});
+}
 
 });
+

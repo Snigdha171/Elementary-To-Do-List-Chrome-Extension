@@ -1,1 +1,59 @@
-<!---------------------------------------------------Name : popup.htmlVersion : 1.1Contributors : Snigdha Prakash      Sai Raghuram Prabhu      Prachi PrakashFeature Changes : Date    Description06/11/2016  Save the data on reload of the plugin08/11/2016  Added appropriate title on task completion09/11/2016  Tick functionality added    ------------------------------------------------------><!DOCTYPE html><html><head><script src="jquery.min.js"></script><style>ul li { list-style:none; cursor: pointer;    position: relative;}ul li.checked {  text-decoration: line-through;  }#taskInput,#addTask,#clearTasks {    border-radius: 25px;    border: 2px solid #bed4f7;}ul li.checked::before {    content: '';    position: absolute;    border-style: solid;    border-width: 0 2px 2px 0;    top: 1px;    left: -14px;    transform: rotate(45deg);    height: 14px;    width: 5px;}</style></head><div id="taskDiv" class="header">  <input type="text" id="taskInput" placeholder="Enter the task" />  <br></br>  <button id="addTask" class="addTask">Add</button>  <button id='clearTasks'>Clear</button>  </div><div id="alert"></div><ul id="taskUL" title="Click to mark the task completed"></ul><script src="popup.js"></script></html>
+<!---------------------------------------------------
+Name : popup.html
+Version : 1.1
+Feature Changes : 
+Date 			Description
+06/11/2016		Save the data on reload of the plugin
+08/11/2016		Added appropriate title on task completion
+------------------------------------------------------>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<style>
+ul li {
+	list-style:none;
+	cursor: pointer;
+    position: relative;
+}
+
+ul li.checked {
+  text-decoration: line-through;
+  
+}
+
+#taskInput,#addTask,#clearTasks {
+    border-radius: 25px;
+    border: 2px solid #bed4f7;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 1px;
+    left: -14px;
+    transform: rotate(45deg);
+    height: 14px;
+    width: 5px;
+}
+</style>
+</head>
+
+<div id="taskDiv" class="header">
+  <input type="text" id="taskInput" placeholder="Enter the task">
+  <br></br>
+  <button id="addTask" class="addTask">Add</button>
+  <button id='clearTasks'>Clear</button>
+  
+
+</div>
+<div id="alert"></div>
+<ul id="taskUL" title="Click to mark the task completed"></ul>
+
+
+<script src="popup.js"></script>
+
+</html>

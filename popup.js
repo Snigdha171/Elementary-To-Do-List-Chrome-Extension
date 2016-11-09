@@ -58,7 +58,9 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
-
+//Preserve the status
+$('.checked').attr('title', 'Click to undo');
+	
 // Create a new task list
 $("#addTask").click(function(){
   var li = document.createElement("li");

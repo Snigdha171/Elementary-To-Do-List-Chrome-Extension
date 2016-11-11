@@ -5,6 +5,7 @@ Feature Changes :
 Date 			Description
 06/11/2016		Save the data on reload of the plugin
 08/11/2016		Added appropriate title on task completion
+11/11/2016              Clear tasks when completed and clear all tasks functionality added
 ------------------------------------------------------>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ ul li.checked {
   
 }
 
-#taskInput,#addTask,#clearTasks {
+#taskInput,#addTask,#clearTasks,#clearTasksCompleted {
     border-radius: 25px;
     border: 2px solid #bed4f7;
 }
@@ -46,10 +47,12 @@ ul li.checked::before {
   <input type="text" id="taskInput" placeholder="Enter the task">
   <br></br>
   <button id="addTask" class="addTask">Add</button>
-  <button id='clearTasks'>Clear</button>
+  <button id='clearTasksCompleted'>Clear Completed</button>
+  <button id='clearTasks'>Clear All</button>
   
 
 </div>
+
 <div id="alert"></div>
 <ul id="taskUL" title="Click to mark the task completed"></ul>
 

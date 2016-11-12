@@ -2,10 +2,12 @@
 Name : popup.html
 Version : 1.1
 Feature Changes : 
-Date 			Description
-06/11/2016		Save the data on reload of the plugin
-08/11/2016		Added appropriate title on task completion
-11/11/2016              Clear tasks when completed and clear all tasks functionality added
+Date 		Description
+05/11/2016      Initial version
+06/11/2016	Save the data on reload of the plugin
+08/11/2016	Added appropriate title on task completion
+11/11/2016      Clear tasks when completed and clear all tasks functionality added
+12/11/2016      Added the minimum width and height of the page        
 ------------------------------------------------------>
 
 <!DOCTYPE html>
@@ -40,23 +42,29 @@ ul li.checked::before {
     height: 14px;
     width: 5px;
 }
+	
+body {
+    min-width:300px;
+	min-height:100px;
+}
+	
 </style>
 </head>
-
-<div id="taskDiv" class="header">
-  <input type="text" id="taskInput" placeholder="Enter the task">
-  <br></br>
-  <button id="addTask" class="addTask">Add</button>
-  <button id='clearTasksCompleted'>Clear Completed</button>
-  <button id='clearTasks'>Clear All</button>
+<body>
+	<div id="taskDiv" class="header">
+  	<input type="text" id="taskInput" style="width: 220px;" placeholder="Enter the task">
+  	<br></br>
+  	<button id="addTask" class="addTask">Add</button>
+  	<button id='clearTasksCompleted'>Clear Completed</button>
+  	<button id='clearTasks'>Clear All</button>
   
 
-</div>
+	</div>
 
-<div id="alert"></div>
-<ul id="taskUL" title="Click to mark the task completed"></ul>
+	<div id="alert"></div>
+	<ul id="taskUL" title="Click to mark the task completed"></ul>
 
 
-<script src="popup.js"></script>
-
+	<script src="popup.js"></script>
+</body>
 </html>

@@ -5,6 +5,7 @@ Feature Changes :
 Date 			Description
 06/11/2016		Save the data on reload of the plugin
 08/11/2016		Added appropriate title on task completion
+11/11/2016              Clear task when completed and clear all task functionality added
 */
 
 
@@ -27,11 +28,21 @@ $(document).ready(function() {
     localStorage.setItem('todoList', JSON.stringify(toDoList));
   }
 
+  $("#clearTasksCompleted").click(function(e) {
+    e.preventDefault();
+    //localStorage.clear();
+	$('.checked').remove();
+	update();
+    location.reload();
+  });
+  
   $("#clearTasks").click(function(e) {
     e.preventDefault();
     localStorage.clear();
     location.reload();
   });
+  
+  
 
   loadAfterRefresh();
 
@@ -70,10 +81,9 @@ $("#addTask").click(function(){
 });
 
 function addTask() {
-	 var li = document.createElement("li");
+  var li = document.createElement("li");
   var inputValue = document.getElementById("taskInput").value;
   var t = document.createTextNode(inputValue);
-  console.log(t);
   li.appendChild(t);
   if (inputValue === '') {
     $('#alert').html("To do List cannot be empty");

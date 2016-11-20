@@ -1,4 +1,4 @@
-ul li {
+ul h3 {
 	list-style:none;
 	cursor: pointer;
     position: relative;
@@ -18,7 +18,7 @@ ul li {
     margin-right: -4px;
 }
 
-ul li.checked {
+ul h3.checked {
   text-decoration: line-through;
   
 }
@@ -67,7 +67,7 @@ ul li.checked {
     border: 2px solid #bed4f7;
 }
 
-ul li.checked::before {
+ul h3.checked::before {
     content: '';
     position: absolute;
     border-style: solid;
@@ -82,7 +82,7 @@ ul li.checked::before {
 body {
     min-width:300px;
 	min-height:100px;
-	background:url("images.png");
+	background:url("images3.png");
 	background-repeat: no-repeat;
     background-size: 100%100%;
 }

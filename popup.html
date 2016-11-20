@@ -1,35 +1,38 @@
-<!doctype html>
+<!---------------------------------------------------
+Name : popup.html
+Version : 1.1
+Feature Changes : 
+Date 		Description
+05/11/2016      Initial version
+06/11/2016	Save the data on reload of the plugin
+08/11/2016	Added appropriate title on task completion
+11/11/2016      Clear tasks when completed and clear all tasks functionality added
+12/11/2016      Added the minimum width and height of the page        
+------------------------------------------------------>
 
+<!DOCTYPE html>
 <html>
-
 <head>
 <script src="jquery.min.js"></script>
 
-<!--adding internal CSS for form element styling -->
-<style>
-
-#task,#add,#clear {
-    border-radius: 25px;
-    border: 2px solid #bed4f7;
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="common.css">
 </head>
+<body>
+	<div class="main">
+	<div id="taskDiv" class="header">
+  	<input type="text" id="taskInput" class="defaultTextBox" style="width: 220px;" placeholder="Enter the task">
+  	<br></br>
+  	<button id="addTask" class="addTask button">Add</button>
+  	<button id='clearTasksCompleted' class="button">Clear Completed</button>
+  	<button id='clearTasks'class="button">Clear All</button>
+  
 
-<!--Defining the form elements -->
+	</div>
 
-<form id="form" action="#" method="POST">
+	<div id="alert"></div>
+	<ul id="taskUL" title="Click to mark the task completed"></ul>
 
-<input id="task" name="task" type="text" placeholder="Input the tasks for the day"/><br></br>
-<input id="add" type="submit" value="Add" />
-<button id="clear">Clear All</button>
-
-</form>
-
-<div id="alert"></div>
-<div id="todos"></div>
-
-<!--Calling the external java script -->
-<script src="popup.js"></script>
-
+	</div>
+	<script src="popup.js"></script>
+</body>
 </html>

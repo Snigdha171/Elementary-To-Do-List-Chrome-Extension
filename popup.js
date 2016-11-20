@@ -59,13 +59,13 @@ $(document).ready(function() {
 // Checked on click
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
+  if (ev.target.tagName === 'H3') {
     ev.target.classList.toggle('checked');
 	update();
 	if(ev.target.classList == 'checked') { 
 		$('.checked').attr('title', 'Click to undo');
 	} else {
-		$('li').removeAttr( "title" );
+		$('h3').removeAttr( "title" );
 		$('.checked').attr('title', 'Click to undo');
 	}
   }
@@ -82,17 +82,19 @@ $("#addTask").click(function(){
 
 function addTask() {
   var li = document.createElement("li");
+  var h3 = document.createElement("h3");
   var inputValue = document.getElementById("taskInput").value;
   var t = document.createTextNode(inputValue);
-  li.appendChild(t);
+  //document.getElementsByTagName("li")[0].appendChild(h2)
+  $(li).append('<h3>');
+  h3.appendChild(t);
   if (inputValue === '') {
     $('#alert').html("To do List cannot be empty");
     $('#alert').fadeIn().delay(1000).fadeOut();
   } else {
-    document.getElementById("taskUL").appendChild(li);
+    document.getElementById("taskUL").appendChild(h3);
   }
   document.getElementById("taskInput").value = "";
 }
 
 });
-

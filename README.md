@@ -2,7 +2,7 @@
 
 This repository contains the files which are required to make a 'To-Do List' Chrome extension
 
-Development Stage - Elementary
+Development Stage - ~~Elementary~~ Complete
 
 Contributers - 
    - [Raghuram Prabhu](https://github.com/RaghuramprabhuMuthukrishnan)

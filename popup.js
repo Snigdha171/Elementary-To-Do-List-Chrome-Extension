@@ -1,23 +1,101 @@
-$('#add').click( function() {
-   var Task = $('#task').val();
-  if($("#task").val() == '') {
+/*
+Name : popup.js
+Version : 1.1
+Feature Changes : 
+Date 			Description
+06/11/2016		Save the data on reload of the plugin
+08/11/2016		Added appropriate title on task completion
+11/11/2016              Clear task when completed and clear all task functionality added
+*/
+
+
+
+$(document).ready(function() {
+  
+	//Hit enter key to add taks
+	document.onkeydown=function(){
+		if(window.event.keyCode=='13'){
+			addTask();
+			update();
+		}
+	}
+  // To save and reload
+  function update() { 
+    var toDoList = [];
+    $("ul").each(function(){
+       toDoList.push(this.innerHTML);
+    })
+    localStorage.setItem('todoList', JSON.stringify(toDoList));
+  }
+
+  $("#clearTasksCompleted").click(function(e) {
+    e.preventDefault();
+    //localStorage.clear();
+	$('.checked').remove();
+	update();
+    location.reload();
+  });
+  
+  $("#clearTasks").click(function(e) {
+    e.preventDefault();
+    localStorage.clear();
+    location.reload();
+  });
+  
+  
+
+  loadAfterRefresh();
+
+  function loadAfterRefresh() {
+    if (localStorage.getItem('todoList')){
+        var toDoList = JSON.parse(localStorage.getItem('todoList'));
+        $("ul").each(function(listItem){
+          this.innerHTML = toDoList [listItem];
+        })
+    }
+  }
+// });
+
+// Checked on click
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'H3') {
+    ev.target.classList.toggle('checked');
+	update();
+	if(ev.target.classList == 'checked') { 
+		$('.checked').attr('title', 'Click to undo');
+	} else {
+		$('h3').removeAttr( "title" );
+		$('.checked').attr('title', 'Click to undo');
+	}
+  }
+}, false);
+
+//Preserve the status
+$('.checked').attr('title', 'Click to undo');
+
+// Create a new task list
+$("#addTask").click(function(){
+  addTask();
+  update();
+});
+
+function addTask() {
+  var li = document.createElement("li");
+  var h3 = document.createElement("h3");
+  var inputValue = document.getElementById("taskInput").value;
+  var t = document.createTextNode(inputValue);
+  //document.getElementsByTagName("li")[0].appendChild(h2)
+  $(li).append('<h3>');
+  h3.appendChild(t);
+  if (inputValue === '') {
     $('#alert').html("To do List cannot be empty");
     $('#alert').fadeIn().delay(1000).fadeOut();
-    return false;
-   }
-   $('#todos').prepend("<li style='list-style:none;'><input id='check' name='check' type='checkbox'/>" + Task + "</li>");
-   $('#form')[0].reset();
-   var todos = $('#todos').html();
-   localStorage.setItem('todos', todos);
-   return false;
-});
-
-if(localStorage.getItem('todos')) {
-$('#todos').html(localStorage.getItem('todos'));
+  } else {
+    document.getElementById("taskUL").appendChild(h3);
+  }
+  document.getElementById("taskInput").value = "";
 }
 
-$('#clear').click( function() {
-window.localStorage.clear();
-location.reload();
-return false;
 });
+

@@ -21,6 +21,10 @@ Sources -
 
 5. jquery.min.js - This script contains the JQuery library. It is downloaded from the internet
 
+6. common.css - This is an external stylesheet that takes care of all the styling
+
+7. image3.png - This is the background image of the plugin
+
 
 Step to execute -
 

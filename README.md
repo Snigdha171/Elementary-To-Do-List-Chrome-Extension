@@ -4,12 +4,12 @@ This repository contains the files which are required to make a 'To-Do List' Chr
 
 Development Stage - ~~Elementary~~ Complete
 
-Contributers - 
+#### Contributers - 
    - [Raghuram Prabhu](https://github.com/RaghuramprabhuMuthukrishnan)
    - [Snigdha Prakash](https://github.com/Snigdha171)
    - [Prachi Prakash](https://github.com/prachiprakash26)
 
-Sources -
+#### Sources -
 
 1. manifest.json - This file contains the manifest fields and their attributes required for the Extension
 
@@ -26,7 +26,7 @@ Sources -
 7. image3.png - This is the background image of the plugin
 
 
-Step to execute -
+#### Step to execute -
 
 1. Save all the 5 files mentioned above into a folder. Save the folder into desktop or any convinient location
 
@@ -43,3 +43,11 @@ Step to execute -
 7. You can mark the tasks that have been completed
 
 8. Once you are done with all the tasks, you can clear everything using "Clear All" button and start fresh
+
+#### Customization in Progress
+##### Folder Created - [ShowNotification](https://github.com/Snigdha171/Elementary-To-Do-List-Chrome-Extension/tree/master/ShowNotification)
+
+##### Functionality to be added - 
+PopUp Notifictaions should be generated at regular intervals informing the user of the pending tasks.
+
+#### Note - All changes related to the above requirement shall be maintained in Elementary-To-Do-List-Chrome-Extension/ShowNotification/ folder only.

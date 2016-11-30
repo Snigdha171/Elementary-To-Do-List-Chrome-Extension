@@ -26,7 +26,7 @@ Development Stage - ~~Elementary~~ Complete
 7. image3.png - This is the background image of the plugin
 
 
-#### Step to execute -
+#### Steps to execute -
 
 1. Save all the 5 files mentioned above into a folder. Save the folder into desktop or any convinient location
 
